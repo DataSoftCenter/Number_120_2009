@@ -1,0 +1,40 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "DM_Pea.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TDataModule_PEA *DataModule_PEA;
+//---------------------------------------------------------------------------
+__fastcall TDataModule_PEA::TDataModule_PEA(TComponent* Owner)
+	: TDataModule(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TDataModule_PEA::DataModuleCreate(TObject *Sender)
+{
+#define LAUSE "SELECT * FROM NUMBER_KASUTAJAD WHERE KASUTAJA = '"
+#define LOPP  "'"
+
+	char name[MAX_PATH];
+	DWORD size = MAX_PATH;
+	GetUserName(name, &size);
+	AnsiString NIMI = AnsiString(name).UpperCase();
+
+
+//AnsiString KASUTAJA = NIMI;
+AnsiString KASUTAJA = "K4572547";
+
+
+DataModule_PEA->ADODataSet_KASUTAJAD->Active = false;
+DataModule_PEA->ADODataSet_KASUTAJAD->CommandText = LAUSE + KASUTAJA + LOPP;
+DataModule_PEA->ADODataSet_KASUTAJAD->Active = true;
+
+
+
+}
+//---------------------------------------------------------------------------
+
