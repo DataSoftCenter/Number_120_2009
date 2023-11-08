@@ -1,3 +1,4 @@
+# https://docwiki.embarcadero.com/RADStudio/Alexandria/en/File_Extensions_of_Files_Generated_by_RAD_Studio
 # Prerequisites
 *.d
 
@@ -14,19 +15,40 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
+# *.dll
 
 # Compiled Static libraries
 *.lai
 *.la
 *.a
-*.lib
+# *.lib
 
 # Executables
 *.exe
 *.out
 *.app
+
+# Custom
+*.ilc
+*.ild
+*.ilf
+*.ilr
+*.ils
+*.map
+*.pdi
+*.zip
+*.tds
+*.~cpp
+*.~h
+*.~bpr
+*.~dfm
+__history/
+__recovery/
+__astcache/
+Debug/
+Release/
+Win32/
+Win64/
+RUNTIME/
+RUNTIME-32bit/
+RUNTIME-64bit/
